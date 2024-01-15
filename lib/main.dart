@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 
 main() => runApp(const Expenses());
 
+//teste
 class Expenses extends StatelessWidget {
   const Expenses({super.key});
 
