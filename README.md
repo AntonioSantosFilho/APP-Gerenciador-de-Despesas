@@ -1,8 +1,8 @@
-# Controle de Despesas Pessoais
+# Controle de Finanças Pessoais
 
 Este é um aplicativo Flutter desenvolvido para ajudar no controle de despesas pessoais. Com este aplicativo, você pode cadastrar e acompanhar suas despesas básicas de forma simples e intuitiva.
 
-## Funcionalidades
+## Principais Recursos
 - Cadastro de despesas básicas: Permite cadastrar as despesas básicas, como alimentação, transporte, moradia, entre outras.
 - Acompanhamento das despesas: Apresenta uma visão geral das despesas cadastradas, permitindo visualizar o valor e a data de cada despesa.
 - Estatísticas de despesas: Apresenta gráficos e estatísticas para ajudar no acompanhamento dos gastos.

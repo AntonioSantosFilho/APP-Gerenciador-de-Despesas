@@ -1,5 +1,6 @@
 import 'package:expenses/models/transaction.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 main() => runApp(const Expenses());
 
@@ -16,6 +17,9 @@ class Expenses extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
+
+  final titleController = TextEditingController();
+  final valueController = TextEditingController();
 
   final _transaction = [
     Transaction(
@@ -44,19 +48,68 @@ class MyHomePage extends StatelessWidget {
             Column(
               children: <Widget>[
                 ..._transaction.map((tr) {
-                  return Row(children: [
-                    Container(
-                      margin: EdgeInsets.symmetric(
-                        horizontal: 15,
-                        vertical: 10,
+                  return Card(
+                    child: Row(children: [
+                      Container(
+                        margin: const EdgeInsets.symmetric(
+                          horizontal: 15,
+                          vertical: 10,
+                        ),
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                          color: Colors.black,
+                          width: 2,
+                        )),
+                        padding: const EdgeInsets.all(10),
+                        child: Text('R\$${tr.value.toStringAsFixed(2)}',
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.purple)),
                       ),
-                      child: Text(tr.value.toString()),
-                    ),
-                    Column(children: [Text(tr.title), Text(tr.date.toString())])
-                  ]);
+                      Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              tr.title,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 16),
+                            ),
+                            Text(
+                              DateFormat('d-MM-y').format(tr.date),
+                              style: const TextStyle(color: Colors.grey),
+                            )
+                          ])
+                    ]),
+                  );
                 }).toList()
               ],
-            )
+            ),
+            const Card(
+                elevation: 5,
+                child: Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      TextField(
+                        decoration: InputDecoration(labelText: 'Título'),
+                      ),
+                      TextField(
+                          decoration: InputDecoration(labelText: 'Valor R\$')),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          ElevatedButton(
+                              onPressed: null,
+                              child: Text(
+                                "Nova Transação",
+                                style: TextStyle(color: Colors.purple),
+                              )),
+                        ],
+                      )
+                    ],
+                  ),
+                ))
           ],
         ));
   }
