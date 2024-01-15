@@ -1,16 +1,63 @@
-# expenses
+# Controle de Despesas Pessoais
 
-A new Flutter project.
+Este é um aplicativo Flutter desenvolvido para ajudar no controle de despesas pessoais. Com este aplicativo, você pode cadastrar e acompanhar suas despesas básicas de forma simples e intuitiva.
 
-## Getting Started
+## Funcionalidades
+- Cadastro de despesas básicas: Permite cadastrar as despesas básicas, como alimentação, transporte, moradia, entre outras.
+- Acompanhamento das despesas: Apresenta uma visão geral das despesas cadastradas, permitindo visualizar o valor e a data de cada despesa.
+- Estatísticas de despesas: Apresenta gráficos e estatísticas para ajudar no acompanhamento dos gastos.
 
-This project is a starting point for a Flutter application.
+## Requisitos
 
-A few resources to get you started if this is your first Flutter project:
+Certifique-se de ter os seguintes requisitos instalados antes de executar o aplicativo:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter SDK
+- Dart SDK
+- Ambiente de desenvolvimento Flutter.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Executando o aplicativo
+
+Siga as etapas abaixo para executar o aplicativo:
+
+1. Clone o repositório para o seu ambiente local.
+
+```
+git clone https://github.com/AntonioSantosFilho/APP-Gerenciador-de-Despesas.git
+```
+
+2. Acesse o diretório do projeto.
+
+```
+cd nome-do-repositorio
+```
+
+3. Instale as dependências do projeto. 
+
+```
+flutter pub get
+```
+
+4. Conecte um dispositivo físico ou inicie um emulador Android/iOS.
+
+5. Execute o aplicativo.
+
+```
+flutter run
+```
+
+## Apenas Gerando o APK
+
+
+```
+flutter clean
+flutter build apk
+```
+
+> Seu .APK será gerado em Pasta_do_projeto\build\app\outputs\apk\debug\app-debug.apk, basta copiar em enviar para seu celular Android.
+
+
+## Contribuição
+Contribuições são bem-vindas! Se você encontrar algum problema ou tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+## Licença
+Este projeto está licenciado sob a MIT License.
