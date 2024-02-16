@@ -1,4 +1,4 @@
-#Wed Feb 14 05:06:43 BRT 2024
+#Fri Feb 16 01:43:55 BRT 2024
 base.0=D\:\\MEUS PROJETOS FLUTTER\\ProjetosCursoUdemyFlutter\\expenses\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
