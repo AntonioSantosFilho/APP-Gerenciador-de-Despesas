@@ -97,6 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Despesas Pessoais'),
+        centerTitle: true,
         actions: [
           IconButton(
             icon: const Icon(Icons.add),
