@@ -7,9 +7,11 @@ Este é um aplicativo Flutter desenvolvido para ajudar no controle de despesas p
 - Acompanhamento das despesas: Apresenta uma visão geral das despesas cadastradas, permitindo visualizar o valor e a data de cada despesa.
 - Estatísticas de despesas: Apresenta gráficos e estatísticas para ajudar no acompanhamento dos gastos.
 
+## IMAGENS EM BREVE
+
 ## Requisitos
 
-Certifique-se de ter os seguintes requisitos instalados antes de executar o aplicativo:
+Certifique-se de ter os seguintes requisitos instalados antes de executar o código do aplicativo:
 
 - Flutter SDK
 - Dart SDK

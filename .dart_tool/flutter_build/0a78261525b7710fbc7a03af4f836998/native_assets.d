@@ -1,0 +1,1 @@
+ C:\\Users\\toim6\\OneDrive\\Imagens\\APP-Gerenciador-de-Despesas\\.dart_tool\\flutter_build\\0a78261525b7710fbc7a03af4f836998\\native_assets.yaml: 

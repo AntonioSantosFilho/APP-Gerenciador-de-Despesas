@@ -3,28 +3,26 @@ import '../models/transaction.dart';
 import 'package:intl/intl.dart';
 
 class TransactionList extends StatelessWidget {
-  const TransactionList(this.transactions, {super.key});
-
   final List<Transaction> transactions;
+  final void Function(String) onRemove;
+
+  const TransactionList(this.transactions, this.onRemove, {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 300,
+    return SizedBox(
+      height: 430,
       child: transactions.isEmpty
           ? Column(
               children: [
-                SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
                 Text(
                   'Nenhuma Transação Cadastrada!',
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
+                const SizedBox(height: 20),
                 SizedBox(
-                  height: 20,
-                ),
-                Container(
                   height: 200,
                   child: Image.asset(
                     'assets/images/waiting.png',
@@ -38,38 +36,40 @@ class TransactionList extends StatelessWidget {
               itemBuilder: (ctx, index) {
                 final tr = transactions[index];
                 return Card(
-                  child: Row(children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: 15,
-                        vertical: 10,
-                      ),
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                        color: Colors.black,
-                        width: 2,
-                      )),
-                      padding: const EdgeInsets.all(10),
-                      child: Text('R\$${tr.value.toStringAsFixed(2)}',
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Colors.purple)),
-                    ),
-                    Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            tr.title,
+                  elevation: 5,
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 8,
+                    horizontal: 5,
+                  ),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.purple,
+                      radius: 30,
+                      child: Padding(
+                        padding: const EdgeInsets.all(6),
+                        child: FittedBox(
+                          child: Text(
+                            'R\$${tr.value}',
                             style: const TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
+                              color: Colors.white,
+                            ),
                           ),
-                          Text(
-                            DateFormat('d-MM-y').format(tr.date),
-                            style: const TextStyle(color: Colors.grey),
-                          )
-                        ])
-                  ]),
+                        ),
+                      ),
+                    ),
+                    title: Text(
+                      tr.title,
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    subtitle: Text(
+                      DateFormat('d MMM y').format(tr.date),
+                    ),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.delete),
+                      color: Theme.of(context).colorScheme.error,
+                      onPressed: () => onRemove(tr.id),
+                    ),
+                  ),
                 );
               },
             ),
